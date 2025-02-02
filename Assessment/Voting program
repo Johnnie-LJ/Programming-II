@@ -1,1 +1,38 @@
+#include <iostream>
+#include <string>
+#include <cassert>
+using namespace std;
 
+int main()
+{
+    string name;
+    int age, year, yearOfBirth;
+
+    cout << "[Enter] your name:\n";
+    getline(cin, name, '\n');
+    cout << "\nHello " << name << ", \nLet us validate if you can vote or not. \n" << endl;
+
+    cout << "[Enter] the current year:\n";
+    cin >> year;
+
+    cout << "\n[Enter] your year of birth:\n";
+    cin >> yearOfBirth;
+
+    age = year - yearOfBirth;
+    cout << "\nIt is the year " << year << ", and you are " << age << " years old this year." << endl << endl;
+
+    //Boolean validation for year of birth NOT equal to & NOT greater than
+    assert(!(yearOfBirth >= year));
+    {
+        if (age>=18)
+        {
+            cout << "You are eligible to vote this year :) \nGo exercise your right!" << endl;
+        }
+        else
+        {
+            cout << "You are NOT allowed to vote this year. \n";
+            cout << "You are underage for voting. Thank you for caring about democracy." << endl;
+        }
+    }
+    return 0;
+}
